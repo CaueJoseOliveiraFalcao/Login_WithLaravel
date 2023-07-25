@@ -4,7 +4,14 @@ use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
 
 return [
-
+    'providers' => [
+        Spatie\Permission\PermissionServiceProvider::class
+    ],
+    'aliases' => [
+        // ...
+        'Permission' => Spatie\Permission\Models\Permission::class,
+        'Role' => Spatie\Permission\Models\Role::class,
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -186,3 +193,4 @@ return [
     ])->toArray(),
 
 ];
+
