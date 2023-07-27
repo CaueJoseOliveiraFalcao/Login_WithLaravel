@@ -14,7 +14,8 @@
         
     </head>
     <body class="antialiased">
-       <form action="/login" method="GET">
+       <form action="{{route('register.submit')}}" method="POST">
+        @csrf
         <h1>LOGIN</h1>
             <label for="email">Email :</label>
             <input type="text" name="email">

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,10 +11,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+use App\Http\Controllers\Controller;
 
-Route::get('/', function () {
-    return view('/auth/login');
-});
-Route::get('/register', function() {
-    return view('/auth/register');
-});
+
+Route::get('/login', [Controller::class, 'showLoginForm'])->name('login');
+Route::post('/login', [Auth\Controller::class, 'login'])->name('login.submit');
+Route::get('/register', [Controller::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [Controller::class, 'register'])->name('register.submit');

@@ -14,16 +14,17 @@
         
     </head>
     <body class="antialiased">
-       <form action="/login" method="GET">
+       <form action="/register" method="POST">
         <h1>Registrar</h1>
+        @csrf
+            <label for="name">Name :</label>
+            <input type="text" name="name"> 
             <label for="email">Email :</label>
-            <input type="text" name="email">
+            <input type="email" name="email"> 
             <label for="password">Password :</label>
             <input type="password" name="password"> 
-            <label for="confirmedPassword">Password :</label>
-            <input type="password" name="confirmedPassword"> 
             <input type="submit" value="Enviar">
        </form>
-       <a href="/">Já tem um login?</a>
+       <a href="/login">Já tem um login?</a>
     </body>
 </html>
