@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\Controller;
-
+Route::middleware(['web' , 'auth'])->group(function () {
+    Route::get('/dashboard', [Controller::class, 'showDashboard'])->name('dashboard');
+});
 
 Route::get('/', [Controller::class, 'showLoginForm'])->name('login');
-Route::post('/login', [Auth\Controller::class, 'login'])->name('login.submit');
+Route::post('/login', [Controller::class, 'login'])->name('login.submit');
 Route::get('/register', [Controller::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [Controller::class, 'register'])->name('register.submit');
