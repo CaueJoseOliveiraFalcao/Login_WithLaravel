@@ -25,6 +25,6 @@
             <input type="password" name="password"> 
             <input type="submit" value="Enviar">
        </form>
-       <a href="/login">Já tem um login?</a>
+       <a href="/">Já tem um login?</a>
     </body>
 </html>

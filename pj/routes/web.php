@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 
 
-Route::get('/login', [Controller::class, 'showLoginForm'])->name('login');
+Route::get('/', [Controller::class, 'showLoginForm'])->name('login');
 Route::post('/login', [Auth\Controller::class, 'login'])->name('login.submit');
 Route::get('/register', [Controller::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [Controller::class, 'register'])->name('register.submit');
