@@ -25,7 +25,7 @@ class Controller extends BaseController
             return redirect()->route('login')->with('error', 'Você precisa estar logado para acessar a página de dashboard.');
         }
 
-        $user = Auth::user();
+        $user = Auth::user();  
         return view('dashboard')->with('user', $user);
     }
     public function register(Request $request)
@@ -39,8 +39,6 @@ class Controller extends BaseController
             'password' => bcrypt($password),
             'permition' => 'bronze'
         ]);
-
-
         return redirect()->route('login')->with('success', 'Registro bem-sucedido. Faça o login');
     }
     public function login(Request $request)
